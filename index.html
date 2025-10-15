@@ -5,5 +5,34 @@
 </head>
 <body>
   <h1>Velkommen til GrønBooking</h1>
+
+  <form id="bookingForm">
+    <label for="service">Vælg service:</label>
+    <select id="service" required>
+      <option value="">-- Vælg --</option>
+      <option value="privat">Privat rengøring</option>
+      <option value="kontor">Kontorrengøring</option>
+      <option value="vindue">Vinduespudsning</option>
+      <option value="efter">Efter håndværkere</option>
+    </select>
+
+    <label for="date">Dato:</label>
+    <input type="date" id="date" required>
+
+    <label for="time">Tidspunkt:</label>
+    <select id="time" required>
+      <option value="">-- Vælg --</option>
+      <option value="08:00">08:00</option>
+      <option value="10:00">10:00</option>
+      <option value="13:00">13:00</option>
+      <option value="15:00">15:00</option>
+    </select>
+
+    <button type="submit">Book nu</button>
+  </form>
+
+  <div id="confirmation" style="display:none;">
+    <p>Tak for din booking! Du modtager en bekræftelse snart.</p>
+  </div>
 </body>
 </html>
