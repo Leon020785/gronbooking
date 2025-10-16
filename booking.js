@@ -1,4 +1,5 @@
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
+import { supabase } from './supabase.js'
+document.getElementById("bookingForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const booking = {
@@ -7,10 +8,14 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
     time: document.getElementById("time").value
   };
 
-  // Simuler API-kald
-  console.log("Sender booking:", booking);
+  const { error } = await supabase
+    .from('bookings')
+    .insert([booking]);
 
-  // Vis bekræftelse
-  document.getElementById("bookingForm").style.display = "none";
-  document.getElementById("confirmation").style.display = "block";
+  if (error) {
+    alert("Noget gik galt: " + error.message);
+  } else {
+    document.getElementById("bookingForm").style.display = "none";
+    document.getElementById("confirmation").style.display = "block";
+  }
 });
