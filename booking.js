@@ -8,10 +8,12 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     date: document.getElementById("date").value,
     time: document.getElementById("time").value
   };
+  console.log("Booking data:", booking);
 
   const { error } = await supabase
     .from('bookings')
     .insert([booking]);
+  console.log("Insert error:", error);
 
   if (error) {
     alert("Noget gik galt: " + error.message);
