@@ -3,6 +3,7 @@ document.getElementById("bookingForm").addEventListener("submit", async function
   e.preventDefault();
 
   const booking = {
+    user_id: null,
     service_text: document.getElementById("service").value,
     date: document.getElementById("date").value,
     time: document.getElementById("time").value
