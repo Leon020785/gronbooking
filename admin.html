@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - GrønBooking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Booking Administration</h1>
+    <p style="text-align: center; color: #666; margin-bottom: 20px;">Oversigt over alle bookinger</p>
+    
+    <button class="update-btn" onclick="location.reload()">
+      🔄 Opdater liste
+    </button>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>🛎️ Service</th>
+          <th>📅 Dato</th>
+          <th>⏰ Tid</th>
+        </tr>
+      </thead>
+      <tbody id="bookingTable">
+        <tr><td colspan="3" class="no-bookings">⏳ Indlæser bookinger...</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 30px; text-align: center;">
+      <a href="index.html" style="color: #667eea; text-decoration: none; font-weight: 600;">
+        ← Tilbage til booking
+      </a>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

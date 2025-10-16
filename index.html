@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrønBooking - Book din rengøring</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 GrønBooking</h1>
+    <p style="text-align: center; color: #666; margin-bottom: 30px;">Book din professionelle rengøring nemt og hurtigt</p>
+
+    <form id="bookingForm">
+      <div>
+        <label for="service">Vælg service:</label>
+        <select id="service" required>
+          <option value="">-- Vælg service --</option>
+          <option value="privat">🏠 Privat rengøring</option>
+          <option value="kontor">🏢 Kontorrengøring</option>
+          <option value="vindue">🪟 Vinduespudsning</option>
+          <option value="efter">🔨 Efter håndværkere</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="date">Dato:</label>
+        <input type="date" id="date" required>
+      </div>
+
+      <div>
+        <label for="time">Tidspunkt:</label>
+        <select id="time" required>
+          <option value="">-- Vælg tidspunkt --</option>
+          <option value="08:00">🌅 08:00 - Morgen</option>
+          <option value="10:00">☀️ 10:00 - Formiddag</option>
+          <option value="13:00">🌞 13:00 - Eftermiddag</option>
+          <option value="15:00">🌤️ 15:00 - Sent eftermiddag</option>
+        </select>
+      </div>
+
+      <button type="submit">📅 Book nu</button>
+    </form>
+
+    <div id="confirmation" style="display:none;">
+      <p>✅ Tak for din booking! Du modtager en bekræftelse snart.</p>
+    </div>
+  </div>
+
+  <script type="module" src="booking.js"></script>
+</body>
+</html>
